@@ -101,7 +101,6 @@ export class Resx {
 			const result: ResourceReferences = { unused: new Set<string>() };
 			const cleaned = origFiles.map((file: string) => {
 				const others = this.getLanguageFiles(file, files);
-				console.log(others);
 				const filesToClean = [...others, file];
 				return Promise.all(filesToClean.map(f => this.cleanupResourceFile(f, refs)));
 			});
